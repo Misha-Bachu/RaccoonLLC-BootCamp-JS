@@ -1,12 +1,13 @@
 var Router = require('express')
+var searchValidation = require('../middleware/searchValidation');
 
 const router = Router()
 
-router.get('/search-show', (req, res) => {
+router.get('/show/:q', searchValidation.emptyField, (req, res) => {
     res.send('Hello World! search')
 })
 
-router.get('/search-ajax', (req, res) => {
+router.get('/ajax', (req, res) => {
     res.json({test: 123})
 })
 

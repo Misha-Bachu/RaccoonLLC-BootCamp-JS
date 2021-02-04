@@ -9,8 +9,8 @@ const port = 3000
 app.set('view engine', 'ejs')
 app.set('views', path.resolve(__dirname, 'templates'))
 
-app.use(search)
-app.use(home)
+app.use('/search', search)
+app.use('/home', home)
 
 app.get('/feature', (req, res) => {
     res.render('features', { title: 'features' })
