@@ -1,0 +1,19 @@
+RaccoonLLC Boot camp.
+
+install the application:
+- npm i
+
+run the application:
+- npm run start
+- npm run watch
+
+Branch and commit naming:
+- main branch is master
+- branch naming         feature/lection-1
+                        bugfix/lection-1
+
+- commit naming         L1:ADD: init express
+                        L1:FIX: js require
+                        L1:CHANGE: import
+
+- PR naming - the same as main commit it the PR.
