@@ -127,28 +127,28 @@
     display: none;
 }
 
-.b-icons__mobile {
+.b-header__icons {
     display: inline-block;
     width: 62px;
     vertical-align: middle;
 }
 
-.b-icons__mobile .fa {
+.b-header__icons .fa {
     font: normal normal normal 22px/1 FontAwesome;
 }
 
-.b-icons__mobile .fa-search {
+.b-header__icons .fa-search {
     margin: 0 15px 0 0;
 }
 
 @media (min-width: 992px) {
-    .b-icons__mobile .fa-search {
+    .b-header__icons .fa-search {
         margin: 0 0 0 10px;
     }
 }
 
 @media (min-width: 992px) {
-    .b-icons__mobile {
+    .b-header__icons {
         display: none;
     }
 }
@@ -190,7 +190,8 @@
 }
 
 .b-navigation {
-    margin-right: 20px;
+    margin: 6px 20px -6px 0;
+    vertical-align: middle;
 }
 
 .b-navigation__item {
@@ -214,14 +215,14 @@
 }
 
 /* Sorting Info */
-.b-refinements__inner {
+.b-refinement__wrapper {
     width: 100%;
     padding: 20px 0;
     font: 16px/1.6 Arial, sans-serif;
 }
 
 @media (min-width: 992px) {
-    .b-refinements__inner {
+    .b-refinement__wrapper {
         width: 30%;
     }
 }
@@ -283,22 +284,22 @@
     }
 }
 
-.b-product__tile {
+.b-product-tile {
     margin-bottom: 20px;
     text-align: center;
 }
 
-.b-product__tile .btn-add-to-cart {
+.b-product-tile .btn-add-to-cart {
     display: block;
 }
 
-.b-product__tile .fa {
+.b-product-tile .fa {
     font-size: 20px;
     margin: -3px 10px 0px 0;
     vertical-align: middle;
 }
 
-.b-product__author {
+.b-product-tile__author {
     display: -webkit-box;
     max-height: none;
     margin: 0 0 10px;
@@ -312,7 +313,7 @@
     text-align: center;
 }
 
-.b-product__name {
+.b-product-tile__name {
     display: -webkit-box;
     min-height: 50px;
     max-height: none;
@@ -323,7 +324,7 @@
     overflow: hidden;
 }
 
-.b-product__description {
+.b-product-tile__description {
     display: -webkit-box;
     max-height: none;
     margin: 0 0 10px;
@@ -332,27 +333,27 @@
     overflow: hidden;
 }
 
-.b-product__variations {
+.b-product-tile__variations {
     margin: 0 0 7px;
 }
 
-.b-product__price {
+.b-product-tile__price {
     margin: 0 0 8px;
     font-weight: bold;
     font-size: 20px;
 }
 
-.b-product__tile-details {
+.b-product-tile__details {
     text-align: left;
 }
 
-.b-product__image {
+.b-product-tile__image {
     max-height: 120px;
     margin: 0 0 5px;
 }
 
 @media (min-width: 768px) {
-    .b-product__image {
+    .b-product-tile__image {
         max-height: 250px;
     }
 }
