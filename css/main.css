@@ -1,0 +1,366 @@
+/* General */
+.l-page {
+	font: 16px/1.6 Arial, sans-serif;
+}
+
+.b-page__title {
+    font-size: 22px;
+    margin: 0 0 20px;
+}
+
+@media (min-width: 768px) {
+    .b-page__title {
+        font-size: 36px;
+        margin: 0 0 20px;
+    }
+}
+
+.b-form__input {
+    max-width: 101px;
+    padding: 6px 10px;
+    outline: none;
+}
+
+@media (min-width: 768px) {
+    .b-form__input {
+        max-width: none;
+    }
+}
+
+.b-form__select {
+    width: 100%;
+    padding: 6px 20px 6px 10px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+@media (min-width: 576px) {
+    .b-form__select {
+        width: auto;
+    }
+}
+
+.btn {
+    appearance: none;
+    background: #000;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    outline-width: 0;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.25s ease-out;
+    vertical-align: middle;
+    background-color: #000;
+    border: 1px solid transparent;
+    color: #fff;
+}
+
+.btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.b-variation__item {
+    padding: 2px 7px;
+    margin-right: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    transition: all 0.25s ease-out;
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.b-variation__item:hover,
+.b-variation__item.m-active {
+    border-color: #000;
+    color: #000;
+}
+
+/* Header */
+.b-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    padding: 20px 15px 5px;
+    color: #fff;
+    z-index: 10;
+}
+
+.b-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (min-width: 992px) {
+    .b-header__inner {
+        align-items: flex-end;
+    }
+}
+
+.b-logo__image {
+    max-width: 90px;
+}
+
+@media (min-width: 992px) {
+    .b-logo__image {
+        max-width: 130px;
+    }
+
+    .b-header__navigation {
+        padding: 0 0 10px 50px;
+        width: 100%;
+    }
+}
+
+.b-navigation,
+.b-search__form,
+.b-minicart {
+    display: none;
+}
+
+.b-header__icons {
+    display: inline-block;
+    width: 62px;
+    vertical-align: middle;
+}
+
+.b-header__icons .fa {
+    font: normal normal normal 22px/1 FontAwesome;
+}
+
+.b-header__icons .fa-search {
+    margin: 0 15px 0 0;
+}
+
+@media (min-width: 992px) {
+    .b-header__icons .fa-search {
+        margin: 0 0 0 10px;
+    }
+}
+
+@media (min-width: 992px) {
+    .b-header__icons {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .b-navigation,
+    .b-search,
+    .b-search__form,
+    .b-minicart {
+        display: inline-block;
+    }
+}
+
+.b-minicart {
+    margin: 0 0 0 10px;
+    vertical-align: middle;
+}
+
+.b-minicart__link {
+    color: #fff;
+    transition: all 0.25s ease-out;
+}
+
+.b-minicart__link .fa {
+    font: normal normal normal 22px/1 FontAwesome;
+}
+
+.b-minicart__link:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.b-search {
+    float: right;
+}
+
+.btn-search {
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.b-navigation {
+    margin: 6px 20px -6px 0;
+    vertical-align: middle;
+}
+
+.b-navigation__item {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.b-navigation__item:last-child {
+    margin-right: 0;
+}
+
+.b-navigation__link {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.25s ease-out;
+}
+
+.b-navigation__link:hover {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: underline;
+}
+
+/* Sorting Info */
+.b-refinement__wrapper {
+    width: 100%;
+    padding: 20px 0;
+    font: 16px/1.6 Arial, sans-serif;
+}
+
+@media (min-width: 992px) {
+    .b-refinement__wrapper {
+        width: 30%;
+    }
+}
+
+.b-refinement__link {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.b-refinement__link input,
+.b-refinement__link label {
+    cursor: pointer;
+}
+
+/* Main Info Section */
+.b-page__wrapper {
+    padding: 75px 15px 0;
+}
+
+@media (min-width: 992px) {
+    .b-page__wrapper {
+        padding: 94px 15px 0;
+    }
+}
+
+.b-page__inner {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 992px) {
+    .b-page__inner {
+        flex-direction: row;
+    }
+}
+
+.b-products__wrapper {
+    width: 100%;
+    padding: 20px 0;
+    font: 16px/1.6 Arial, sans-serif;
+}
+
+@media (min-width: 992px) {
+    .b-products__wrapper {
+        width: 70%;
+    }
+}
+
+.b-products___list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .b-products___list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.b-product-tile {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.b-product-tile .btn-add-to-cart {
+    display: block;
+}
+
+.b-product-tile .fa {
+    font-size: 20px;
+    margin: -3px 10px 0px 0;
+    vertical-align: middle;
+}
+
+.b-product-tile__author {
+    display: -webkit-box;
+    max-height: none;
+    margin: 0 0 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-align: center;
+}
+
+.b-product-tile__name {
+    display: -webkit-box;
+    min-height: 50px;
+    max-height: none;
+    margin: 0 0 10px;
+    font-weight: bold;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.b-product-tile__description {
+    display: -webkit-box;
+    max-height: none;
+    margin: 0 0 10px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.b-product-tile__variations {
+    margin: 0 0 7px;
+}
+
+.b-product-tile__price {
+    margin: 0 0 8px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.b-product-tile__details {
+    text-align: left;
+}
+
+.b-product-tile__image {
+    max-height: 120px;
+    margin: 0 0 5px;
+}
+
+@media (min-width: 768px) {
+    .b-product-tile__image {
+        max-height: 250px;
+    }
+}
+
+/* Footer */
+.b-footer {
+    background: #000;
+    padding: 20px 15px;
+    color: #fff;
+}
