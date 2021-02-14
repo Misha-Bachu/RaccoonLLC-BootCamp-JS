@@ -2,7 +2,7 @@
 
 ## Install the project
 
-To install the project follow next commands:
+To install the project follow next commands:  
 1. Clone repository
 2. Run `npm i` to install NPM packages
 
