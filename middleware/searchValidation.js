@@ -1,10 +1,10 @@
-
 function emptyField(req, res, next) {
-    console.log(req.params.q)
+    // eslint-disable-next-line no-console
+    console.log(req.params.q);
 
-    next()
+    next();
 }
 
 module.exports = {
     emptyField
-}
+};

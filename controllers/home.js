@@ -1,9 +1,9 @@
-var Router = require('express')
+const Router = require('express');
 
-const router = Router()
+const router = Router();
 
 router.get('/', (req, res) => {
-    res.send('Hello World! home page!')
-})
+    res.send('Hello World! home page!');
+});
 
-module.exports = router
+module.exports = router;
