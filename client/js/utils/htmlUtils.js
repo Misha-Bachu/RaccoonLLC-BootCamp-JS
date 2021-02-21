@@ -1,17 +1,16 @@
-'use strict'
-
 function createElementFromHTML(htmlString) {
-    var div = document.createElement('div')
-    div.innerHTML = htmlString.trim()
+    const div = document.createElement('div');
+    div.innerHTML = htmlString.trim();
 
-    return div.firstChild
+    return div.firstChild;
 }
 
 function clearNode(node) {
-    node.innerHTML = ''
+    // eslint-disable-next-line no-param-reassign
+    node.innerHTML = '';
 }
 
 module.exports = {
     createElementFromHTML,
     clearNode
-}
+};

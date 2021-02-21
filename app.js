@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path');
 
 const search = require('./controllers/search.js');
 const home = require('./controllers/home.js');
@@ -10,7 +9,7 @@ const port = 3000;
 app.use('/static', express.static('static'));
 app.use('/css', express.static('css'));
 
-app.use(search);
+app.use('/search', search);
 app.use(home);
 
 app.get('/feature', (req, res) => {

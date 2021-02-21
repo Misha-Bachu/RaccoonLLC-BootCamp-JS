@@ -1,6 +1,4 @@
-'use strict'
-
-const htmlUtils = require('./../utils/htmlUtils');
+const htmlUtils = require('../utils/htmlUtils');
 
 function render(pdict) {
     const htmlString = `
@@ -21,11 +19,11 @@ function render(pdict) {
                 <i class="fa fa-cart-plus"></i> Add to Cart
             </a>
         </div>
-    </div>`
+    </div>`;
 
-    return htmlUtils.createElementFromHTML(htmlString)
+    return htmlUtils.createElementFromHTML(htmlString);
 }
 
 module.exports = {
     render
-}
+};

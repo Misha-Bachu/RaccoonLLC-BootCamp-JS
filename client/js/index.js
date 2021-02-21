@@ -1,5 +1,3 @@
-'use strict'
-
 const allProducts = require('./product/products');
 const search = require('./search/search');
 const productTile = require('./product/productTile');
@@ -13,7 +11,8 @@ let products = allProducts;
 function showProducts(parentNode, arrayOfProducts) {
     htmlUtils.clearNode(parentNode);
 
-    for(const element of arrayOfProducts) {
+    for (let i = 0; i < arrayOfProducts.length; i += 1) {
+        const element = arrayOfProducts[i];
         const tile = productTile.render(element);
         parentNode.appendChild(tile);
     }
@@ -34,17 +33,17 @@ function getSortedProducts(sortingId, arrayOfProducts) {
 
 function initEvents() {
     const sortingSelector = document.querySelector('.js-sorting');
-    sortingSelector.addEventListener('change', event => {
+    sortingSelector.addEventListener('change', (event) => {
         selectedSorting = event.currentTarget.value;
         const sortedProducts = getSortedProducts(selectedSorting, products);
         htmlUtils.clearNode(productGrid);
         showProducts(productGrid, sortedProducts);
-    })
+    });
 
     const searchForm = document.querySelector('.js-search');
-    searchForm.addEventListener('submit', event => {
+    searchForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        const value = event.currentTarget.querySelector('input').value;
+        const { value } = event.currentTarget.querySelector('input');
         const searchTitle = document.querySelector('.js-search-title');
 
         if (!value) {
