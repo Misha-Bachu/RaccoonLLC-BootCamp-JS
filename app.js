@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 
 const search = require('./controllers/search.js');
 const home = require('./controllers/home.js');
@@ -6,8 +7,8 @@ const home = require('./controllers/home.js');
 const app = express();
 const port = 3000;
 
-app.use('/static', express.static('static'));
-app.use('/css', express.static('css'));
+app.set('view engine', 'ejs');
+app.set('views', path.resolve(__dirname, 'templates'));
 
 app.use('/search', search);
 app.use(home);
