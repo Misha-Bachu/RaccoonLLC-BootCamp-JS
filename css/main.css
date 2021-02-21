@@ -364,3 +364,11 @@
     padding: 20px 15px;
     color: #fff;
 }
+
+.d-none {
+    display: none;
+}
+
+.b-page__close-icon {
+    cursor: pointer;
+}
