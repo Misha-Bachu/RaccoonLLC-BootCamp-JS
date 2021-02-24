@@ -10,6 +10,9 @@ const port = 3000;
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, 'templates'));
 
+app.use('/static', express.static('static'));
+app.use('/css', express.static('css'));
+
 app.use('/search', search);
 app.use(home);
 
