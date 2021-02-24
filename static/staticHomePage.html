@@ -1,0 +1,377 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Bootcamp</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/general.css" />
+        <link rel="stylesheet" href="css/container.css" />
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+    <body class="l-page">
+        <!-- header -->
+        <header class="b-header">
+            <div class="l-container">
+                <div class="b-header__inner">
+                    <div class="b-header__icons m-left">
+                        <span class="fa fa-bars js-hamburger"></span>
+                    </div>
+
+                    <a href="#" class="b-logo">
+                        <img src="static/images/logo.png" class="b-logo__image" />
+                    </a>
+                    <nav class="b-header__navigation">
+                        <ul class="b-navigation">
+                            <li class="b-navigation__item">
+                                <a href="#" class="b-navigation__link">Library</a>
+                            </li>
+                            <li class="b-navigation__item">
+                                <a href="#" class="b-navigation__link">Store Locator</a>
+                            </li>
+                            <li class="b-navigation__item">
+                                <a href="https://raccoon.pet/" target="_blank" class="b-navigation__link">Raccoon LLC</a>
+                            </li>
+                        </ul>
+                        <div class="b-search">
+                            <form class="b-search__form" action="">
+                                <input class="b-form__input" type="text" placeholder="Search" name="search" />
+                                <button class="btn-search" type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                            <div class="b-header__icons m-right">
+                                <span class="fa fa-search js-search-mobile"></span>
+                                <a href="#" class="b-minicart__link">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </a>
+                            </div>
+                            <div class="b-minicart">
+                                <a href="#" class="b-minicart__link">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main info block -->
+        <div class="b-page__wrapper">
+            <div class="l-container">
+                <div class="b-page__inner">
+                    <aside class="b-refinement__wrapper">
+                        <select class="b-form__select product__sorting">
+                            <option>Best sellers</option>
+                            <option>Price high to low</option>
+                            <option>Price low to high</option>
+                        </select>
+                        <div class="b-refinement">
+                            <div class="b-refinement__item">
+                                <h2 class="b-refinement__title">Range</h2>
+                                <ul class="b-refinement__values">
+                                    <li class="b-refinement__attribute">
+                                        <a href="#" class="b-refinement__link js-refine-link">
+                                            <input class="b-form__checkbox" type="checkbox" id="refinement1" name="refinement1" value="Refinement label 1">
+                                            <label class="b-form__label" for="refinement1">For Children</label>
+                                        </a>
+                                    </li>
+                                    <li class="b-refinement__attribute">
+                                        <a href="#" class="b-refinement__link js-refine-link">
+                                            <input class="b-form__checkbox" type="checkbox" id="refinement2" name="refinement2" value="Refinement label 2">
+                                            <label class="b-form__label" for="refinement2">For Beginners</label>
+                                        </a>
+                                    </li>
+                                    <li class="b-refinement__attribute">
+                                        <a href="#" class="b-refinement__link js-refine-link">
+                                            <input class="b-form__checkbox" type="checkbox" id="refinement3" name="refinement3" value="Refinement label 3">
+                                            <label class="b-form__label" for="refinement3">For Advanced</label>
+                                        </a>
+                                    </li>
+                                </ul>   
+                            </div>
+                        </div>
+                    </aside>
+                    <main class="b-products__wrapper">
+                        <h1 class="b-page__title">
+                            Best Sellers
+                        </h1>
+                        <div class="b-products___list">
+                            <div class="b-product-tile js-product-tile">
+                                <a href="#" class="b-product-tile__image-link">
+                                    <img class="b-product-tile__image" src="static/images/book-1.png">
+                                </a>
+                                <div class="b-product-tile__details">
+                                    <div class="b-product-tile__author">Mark Myers</div>
+                                    <div class="b-product-tile__name">
+                                        A Smarter Way to Learn JavaScript: The new tech-assisted approach that requires half the effort
+                                    </div>
+                                    <div class="b-product-tile__description">
+                                        The entire 256-page long JavaScript book is judiciously divided into brief chapters. Each of the chapters is followed by 20 absolutely-free sample exercises available at the author’s website. You can do them over and over again to completely digest all the information you just read.
+                                    </div>
+                                    <div class="b-product-tile__variations">
+                                        <span class="b-variation__item m-active">Book</span>
+                                        <span class="b-variation__item">eBook</span>
+                                    </div>
+                                    <div class="b-product-tile__price">15.00$</div>
+                                    <a href="#" class="btn btn-add-to-cart js-add-to-cart">
+                                        <i class="fa fa-cart-plus"></i> Add to Cart
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="b-product-tile js-product-tile">
+                                <a href="#" class="b-product-tile__image-link">
+                                    <img class="b-product-tile__image" src="static/images/book-2.png">
+                                </a>
+                                <div class="b-product-tile__details">
+                                    <div class="b-product-tile__author">Marjin Haverbeke</div>
+                                    <div class="b-product-tile__name">
+                                        Eloquent JavaScript: A Modern Introduction to Programming
+                                    </div>
+                                    <div class="b-product-tile__description">
+                                        Eloquent JavaScript lets the reader digest all its knowledge easily thanks to an easy to understand and relatable language. Though not essentially a JavaScript book, it offers an introduction to programming using JavaScript.
+                                    </div>
+                                    <div class="b-product-tile__variations">
+                                        <span class="b-variation__item m-active">Book</span>
+                                        <span class="b-variation__item">eBook</span>
+                                    </div>
+                                    <div class="b-product-tile__price">12.00$</div>
+                                    <a href="#" class="btn btn-add-to-cart js-add-to-cart">
+                                        <i class="fa fa-cart-plus"></i> Add to Cart
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="b-product-tile js-product-tile">
+                                <a href="#" class="b-product-tile__image-link">
+                                    <img class="b-product-tile__image" src="static/images/book-3.png">
+                                </a>
+                                <div class="b-product-tile__details">
+                                    <div class="b-product-tile__author">Jon Duckett</div>
+                                    <div class="b-product-tile__name">
+                                        JavaScript & JQuery: Interactive Front-End Web Development
+                                    </div>
+                                    <div class="b-product-tile__description">
+                                        Interested in learning JavaScript & jQuery side-by-side for getting started with web development? JavaScript and JQuery: Interactive Front-End Web Development is the top recommendation.
+                                    </div>
+                                    <div class="b-product-tile__variations">
+                                        <span class="b-variation__item m-active">Book</span>
+                                        <span class="b-variation__item">eBook</span>
+                                    </div>
+                                    <div class="b-product-tile__price">9.00$</div>
+                                    <a href="#" class="btn btn-add-to-cart js-add-to-cart">
+                                        <i class="fa fa-cart-plus"></i> Add to Cart
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="b-product-tile js-product-tile">
+                                <a href="#" class="b-product-tile__image-link">
+                                    <img class="b-product-tile__image" src="static/images/book-4.png">
+                                </a>
+                                <div class="b-product-tile__details">
+                                    <div class="b-product-tile__author">Douglas Crockford</div>
+                                    <div class="b-product-tile__name">
+                                        JavaScript: The Good Parts
+                                    </div>
+                                    <div class="b-product-tile__description">
+                                        With the JavaScript: The Good Parts, author Douglas Crockford focuses on the basics of some of the lesser-known yet desirable aspects of JavaScript. It’s only recently that these hidden features are getting the appreciation they deserve from the programming community.
+                                    </div>
+                                    <div class="b-product-tile__variations">
+                                        <span class="b-variation__item m-active">Book</span>
+                                        <span class="b-variation__item">eBook</span>
+                                    </div>
+                                    <div class="b-product-tile__price">14.00$</div>
+                                    <a href="#" class="btn btn-add-to-cart js-add-to-cart">
+                                        <i class="fa fa-cart-plus"></i> Add to Cart
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="b-product-tile js-product-tile">
+                                <a href="#" class="b-product-tile__image-link">
+                                    <img class="b-product-tile__image" src="static/images/book-5.png">
+                                </a>
+                                <div class="b-product-tile__details">
+                                    <div class="b-product-tile__author">Ivelin Demirov</div>
+                                    <div class="b-product-tile__name">
+                                        Learn JavaScript VISUALLY
+                                    </div>
+                                    <div class="b-product-tile__description">
+                                        For newbies wishing to quickly grasp the basics of JavaScript, Learn JavaScript VISUALLY the ideal book to go for. The book makes understanding the basic JS concepts easier by means of a visual approach, hence the name.
+                                    </div>
+                                    <div class="b-product-tile__variations">
+                                        <span class="b-variation__item m-active">Book</span>
+                                        <span class="b-variation__item">eBook</span>
+                                    </div>
+                                    <div class="b-product-tile__price">10.50$</div>
+                                    <a href="#" class="btn btn-add-to-cart js-add-to-cart">
+                                        <i class="fa fa-cart-plus"></i> Add to Cart
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="b-product-tile js-product-tile">
+                                <a href="#" class="b-product-tile__image-link">
+                                    <img class="b-product-tile__image" src="static/images/book-6.png">
+                                </a>
+                                <div class="b-product-tile__details">
+                                    <div class="b-product-tile__author">David Flanagan</div>
+                                    <div class="b-product-tile__name">
+                                        JavaScript: The Definitive Guide
+                                    </div>
+                                    <div class="b-product-tile__description">
+                                        In order to get an in-depth understanding of the workings of closure, graphics, and prototyping, JavaScript: The Definitive Guide is the definite pick. The page count for the book reaches well over 1000 pages, divided into thorough chapters full of examples.
+                                    </div>
+                                    <div class="b-product-tile__variations">
+                                        <span class="b-variation__item m-active">Book</span>
+                                        <span class="b-variation__item">eBook</span>
+                                    </div>
+                                    <div class="b-product-tile__price">7.99$</div>
+                                    <a href="#" class="btn btn-add-to-cart js-add-to-cart">
+                                        <i class="fa fa-cart-plus"></i> Add to Cart
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="b-product-tile js-product-tile">
+                                <a href="#" class="b-product-tile__image-link">
+                                    <img class="b-product-tile__image" src="static/images/book-7.png">
+                                </a>
+                                <div class="b-product-tile__details">
+                                    <div class="b-product-tile__author">David Herman, Foreword by Brendan Eich</div>
+                                    <div class="b-product-tile__name">
+                                        Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript
+                                    </div>
+                                    <div class="b-product-tile__description">
+                                        Anyone who has an ample understanding of the JS basics qualifies to gain the most out of Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript. The JavaScript book takes its readers on an in-depth tour of the high-level, interpreted programming language.
+                                    </div>
+                                    <div class="b-product-tile__variations">
+                                        <span class="b-variation__item m-active">Book</span>
+                                        <span class="b-variation__item">eBook</span>
+                                    </div>
+                                    <div class="b-product-tile__price">18.00$</div>
+                                    <a href="#" class="btn btn-add-to-cart js-add-to-cart">
+                                        <i class="fa fa-cart-plus"></i> Add to Cart
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="b-product-tile js-product-tile">
+                                <a href="#" class="b-product-tile__image-link">
+                                    <img class="b-product-tile__image" src="static/images/book-8.png">
+                                </a>
+                                <div class="b-product-tile__details">
+                                    <div class="b-product-tile__author">Nick Morgan</div>
+                                    <div class="b-product-tile__name">
+                                        JavaScript for Kids: A Playful Introduction to Programming
+                                    </div>
+                                    <div class="b-product-tile__description">
+                                        The name of the book kind of puns on those that are new to the world of programming. JavaScript for Kids: A Playful Introduction to Programming offers a fanciful exploration of the various basic programming concepts.
+                                    </div>
+                                    <div class="b-product-tile__variations">
+                                        <span class="b-variation__item m-active">Book</span>
+                                        <span class="b-variation__item">eBook</span>
+                                    </div>
+                                    <div class="b-product-tile__price">25.00$</div>
+                                    <a href="#" class="btn btn-add-to-cart js-add-to-cart">
+                                        <i class="fa fa-cart-plus"></i> Add to Cart
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="b-product-tile js-product-tile">
+                                <a href="#" class="b-product-tile__image-link">
+                                    <img class="b-product-tile__image" src="static/images/book-9.png">
+                                </a>
+                                <div class="b-product-tile__details">
+                                    <div class="b-product-tile__author">Eric Elliott</div>
+                                    <div class="b-product-tile__name">
+                                        Programming JavaScript Applications: Robust Web Architecture with Node, HTML5, and Moderns JS Libraries
+                                    </div>
+                                    <div class="b-product-tile__description">
+                                        Unlike other JS books that answer the question, “How do I use JavaScript?” Programming JavaScript Applications: Robust Web Architecture with Node, HTML5, and Modern JS Libraries answers, “How do I use JavaScript to build a real-world application?”
+                                    </div>
+                                    <div class="b-product-tile__variations">
+                                        <span class="b-variation__item m-active">Book</span>
+                                        <span class="b-variation__item">eBook</span>
+                                    </div>
+                                    <div class="b-product-tile__price">13.00$</div>
+                                    <a href="#" class="btn btn-add-to-cart js-add-to-cart">
+                                        <i class="fa fa-cart-plus"></i> Add to Cart
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="b-product-tile js-product-tile">
+                                <a href="#" class="b-product-tile__image-link">
+                                    <img class="b-product-tile__image" src="static/images/book-10.png">
+                                </a>
+                                <div class="b-product-tile__details">
+                                    <div class="b-product-tile__author">Ilya Grigorik</div>
+                                    <div class="b-product-tile__name">
+                                        High-Performance Browser Networking
+                                    </div>
+                                    <div class="b-product-tile__description">
+                                        Application performance is something that everyone, ranging from independent developers to full-fledged organizations, crave for. High-Performance Browser Networking is the ultimate guide for building a successful JavaScript application with highly optimized performance.
+                                    </div>
+                                    <div class="b-product-tile__variations">
+                                        <span class="b-variation__item m-active">Book</span>
+                                        <span class="b-variation__item">eBook</span>
+                                    </div>
+                                    <div class="b-product-tile__price">14.00$</div>
+                                    <a href="#" class="btn btn-add-to-cart js-add-to-cart">
+                                        <i class="fa fa-cart-plus"></i> Add to Cart
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="b-product-tile js-product-tile">
+                                <a href="#" class="b-product-tile__image-link">
+                                    <img class="b-product-tile__image" src="static/images/book-11.png">
+                                </a>
+                                <div class="b-product-tile__details">
+                                    <div class="b-product-tile__author">Kyle Simpson</div>
+                                    <div class="b-product-tile__name">
+                                        You Don’t Know JS
+                                    </div>
+                                    <div class="b-product-tile__description">
+                                        Unlike other names on the list, You Don’t Know JS is a book series. All books of the series share similarity in style and scope. The JavaScript book series help readers get acquainted with the most subtle technical aspects of the high-level, interpreted programming language.
+                                    </div>
+                                    <div class="b-product-tile__variations">
+                                        <span class="b-variation__item m-active">Book</span>
+                                        <span class="b-variation__item">eBook</span>
+                                    </div>
+                                    <div class="b-product-tile__price">21.00$</div>
+                                    <a href="#" class="btn btn-add-to-cart js-add-to-cart">
+                                        <i class="fa fa-cart-plus"></i> Add to Cart
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="b-product-tile js-product-tile">
+                                <a href="#" class="b-product-tile__image-link">
+                                    <img class="b-product-tile__image" src="static/images/book-12.png">
+                                </a>
+                                <div class="b-product-tile__details">
+                                    <div class="b-product-tile__author">Reg “raganwald” Braithwaite</div>
+                                    <div class="b-product-tile__name">
+                                        JavaScript Allongé, the “Six” Edition
+                                    </div>
+                                    <div class="b-product-tile__description">
+                                        Building flexible software from small, decoupled units and thinking in terms of functions is all about the JavaScript Allongé, the “Six” Edition. The JavaScript book aims at making the reader think deeply and out-of-the-box about functions, and it succeeds in doing so. This is also the best book for javascript learning.
+                                    </div>
+                                    <div class="b-product-tile__variations">
+                                        <span class="b-variation__item m-active">Book</span>
+                                        <span class="b-variation__item">eBook</span>
+                                    </div>
+                                    <div class="b-product-tile__price">11.00$</div>
+                                    <a href="#" class="btn btn-add-to-cart js-add-to-cart">
+                                        <i class="fa fa-cart-plus"></i> Add to Cart
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer class="b-footer">
+            <div class="l-container">
+                &copy; Great opportunity to join eCommerce world with <b>RACCOON LLC</b>
+            </div>
+        </footer>
+    </body>
+</html>
