@@ -4,12 +4,16 @@ const searchValidation = require('../middleware/searchValidation');
 
 const router = Router();
 
-router.get('/show/:q', searchValidation.emptyField, (req, res) => {
-    res.send('Hello World! search');
+router.get('/show', searchValidation.emptyField, (req, res) => {
+    const { q } = req.query;
+
+    res.send(q);
 });
 
 router.get('/ajax', (req, res) => {
-    res.json({ test: 123 });
+    const { q, sortId } = req.query;
+
+    res.send(q + sortId);
 });
 
 module.exports = router;

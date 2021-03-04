@@ -1,0 +1,15 @@
+[
+    {
+        "id": "author",
+        "displayName": "Author"
+    },
+    {
+        "id": "price-high-to-low",
+        "displayName": "Price high to low",
+        "selected": true
+    },
+    {
+        "id": "price-low-to-high",
+        "displayName": "Price low to high"
+    }
+]
