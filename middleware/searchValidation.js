@@ -1,6 +1,10 @@
 function emptyField(req, res, next) {
-    // eslint-disable-next-line no-console
-    console.log(req.params.q);
+    const { q } = req.query;
+
+    if (q === undefined || q === '') {
+        res.redirect('/home');
+        return;
+    }
 
     next();
 }
