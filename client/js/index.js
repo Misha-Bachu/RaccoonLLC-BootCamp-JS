@@ -1,80 +1,69 @@
-const allProducts = require('./product/products');
-const search = require('./search/search');
-const productTile = require('./product/productTile');
 const htmlUtils = require('./utils/htmlUtils');
-const sortingUtils = require('./utils/sorting');
 
 const productGrid = document.getElementsByClassName('js-product-grid')[0];
-let selectedSorting = document.querySelector('.js-sorting').value;
-let products = allProducts;
 
-function showProducts(parentNode, arrayOfProducts) {
-    htmlUtils.clearNode(parentNode);
+async function showProducts(url) {
+    const response = await window.fetch(url, {
+        method: 'GET'
+    });
 
-    for (let i = 0; i < arrayOfProducts.length; i += 1) {
-        const element = arrayOfProducts[i];
-        const tile = productTile.render(element);
-        parentNode.appendChild(tile);
+    if (response.status === 200) {
+        htmlUtils.clearNode(productGrid);
+        const text = await response.text();
+        productGrid.innerHTML = text;
     }
 }
 
-function getSortedProducts(sortingId, arrayOfProducts) {
-    switch (sortingId) {
-        case 'author':
-            return sortingUtils.sortProductsByAuthor(arrayOfProducts);
-        case 'price-high-to-low':
-            return sortingUtils.sortProductsByPriceHighToLow(arrayOfProducts);
-        case 'price-low-to-high':
-            return sortingUtils.sortProductsByPriceLowToHigh(arrayOfProducts);
-        default:
-            return [];
+async function showQuickView(url) {
+    const response = await window.fetch(url, {
+        method: 'GET'
+    });
+
+    if (response.status === 200) {
+        const modal = document.querySelector('.js-modal');
+        const body = modal.querySelector('.js-modal-body');
+        htmlUtils.clearNode(body);
+
+        const text = await response.text();
+        body.innerHTML = text;
+        modal.classList.remove('d-none');
     }
 }
 
 function initEvents() {
     const sortingSelector = document.querySelector('.js-sorting');
-    sortingSelector.addEventListener('change', (event) => {
-        selectedSorting = event.currentTarget.value;
-        const sortedProducts = getSortedProducts(selectedSorting, products);
-        htmlUtils.clearNode(productGrid);
-        showProducts(productGrid, sortedProducts);
-    });
+    if (sortingSelector) {
+        sortingSelector.addEventListener('change', (event) => {
+            const url = event.currentTarget.options[event.currentTarget.selectedIndex].attributes['data-url'].value;
+            showProducts(url);
+        });
+    }
 
     const searchForm = document.querySelector('.js-search');
     searchForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const { value } = event.currentTarget.querySelector('input');
-        const searchTitle = document.querySelector('.js-search-title');
+        if (value && value !== '') {
+            const url = `${searchForm.action}?q=${value}`;
+            window.location = url;
+        }
+    });
 
-        if (!value) {
+    document.addEventListener('click', (event) => {
+        if (event.target.classList.contains('js-quick-view')) {
+            event.preventDefault();
+            const url = event.target.attributes['data-url'].value;
+            showQuickView(url);
             return;
         }
 
-        searchTitle.classList.remove('d-none');
-        products = search.search(value, products);
-        const sortedProducts = getSortedProducts(selectedSorting, products);
-        showProducts(productGrid, sortedProducts);
-    });
-
-    const clearSearchButton = document.querySelector('.js-clear-search');
-    clearSearchButton.addEventListener('click', () => {
-        const searchTitle = document.querySelector('.js-search-title');
-        const searchInput = document.querySelector('.js-search input');
-
-        searchTitle.classList.add('d-none');
-        searchInput.value = '';
-        products = allProducts;
-
-        const sortedProducts = getSortedProducts(selectedSorting, products);
-        showProducts(productGrid, sortedProducts);
+        if (event.target.classList.contains('js-close-modal')) {
+            event.target.closest('.js-modal').classList.add('d-none');
+        }
     });
 }
 
 function app() {
-    const sortedProducts = getSortedProducts(selectedSorting, products);
-
-    showProducts(productGrid, sortedProducts);
-
     initEvents();
 }
 

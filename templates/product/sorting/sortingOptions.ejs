@@ -1,0 +1,9 @@
+<select class="b-form__select product__sorting js-sorting">
+    <% for( let i = 0; i < sortingOptions.length; i++ ) { %>
+        <option data-url="<%= sortingOptions[i].url %>" value="<%= sortingOptions[i].id %>"
+            <%= sortingOptions[i].selected ? 'selected' : '' %>
+        >
+            <%= sortingOptions[i].displayName %>
+        </option>
+    <% } %>
+</select>

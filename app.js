@@ -1,23 +1,28 @@
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
 const express = require('express');
 const path = require('path');
-
-const search = require('./controllers/search.js');
-const home = require('./controllers/home.js');
+const ejsLocals = require('ejs-locals');
+const controllers = require('./controllersRegistry.js');
 
 const app = express();
 const port = 3000;
+const templates = path.resolve(__dirname, 'templates');
+const expressStatic = express.static('static');
+const expressCSS = express.static('css');
 
+app.engine('ejs', ejsLocals);
 app.set('view engine', 'ejs');
-app.set('views', path.resolve(__dirname, 'templates'));
 
-app.use('/static', express.static('static'));
-app.use('/css', express.static('css'));
+Object.keys(controllers).forEach((name) => {
+    const config = controllers[name];
+    const controller = require(config.path);
 
-app.use('/search', search);
-app.use(home);
+    controller.set('views', templates);
+    controller.use('/static', expressStatic);
+    controller.use('/css', expressCSS);
 
-app.get('/feature', (req, res) => {
-    res.render('features', { title: 'features' });
+    app.use(config.prefix || `/${name}`, controller);
 });
 
 app.listen(port, () => {
