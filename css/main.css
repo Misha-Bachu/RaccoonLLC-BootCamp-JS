@@ -241,6 +241,7 @@
 /* Main Info Section */
 .b-page__wrapper {
     padding: 75px 15px 0;
+    min-height: calc(100vh - 160px);
 }
 
 @media (min-width: 992px) {
@@ -382,4 +383,35 @@
     justify-content: center;
     align-items: center;
     background: rgb(51 51 51 / 71%);
+}
+
+.b-todo-list__wrapper {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #dddddd;
+
+}
+
+.b-todo-list {
+    padding-left: 20px;
+}
+
+.b-todo-list__item {
+    font-size: 12pt;
+}
+.b-todo-list__item::before {
+    font-family: monospace;
+    content: "⬜";
+    color: grey;
+    display: inline-block;
+    width: 25px;
+}
+
+.b-todo-list__item.x::before {
+    content: "✅";
+    color: green;
+}
+
+.b-todo-list__item.r::before {
+    content: "🦝";
 }

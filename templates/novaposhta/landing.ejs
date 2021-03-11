@@ -1,0 +1,78 @@
+<% layout('../layout/page') -%>
+
+<main class="b-page__wrapper">
+    <div class="b-todo-list__wrapper">
+        <h2>TODO</h2>
+        <ul class="b-todo-list">
+            <li class="b-todo-list__item x">Додати контролер novaposhta</li>
+            <li class="b-todo-list__item x">Додати новий ендроінт show</li>
+            <li class="b-todo-list__item x">Додати нову сторінку для ендпоінта</li>
+            <li class="b-todo-list__item x">Додати ссилку на сторінку в хедер</li>
+            <li class="b-todo-list__item x">Додати заголовок сторінки</li>
+            <li class="b-todo-list__item x">Додати поле пошуку та кнопку "Шукати"</li>
+            <li class="b-todo-list__item x">Додати папку services</li>
+            <li class="b-todo-list__item x">Створити файл services/novaposhta</li>
+            <li class="b-todo-list__item x">Додати функцію searchSettlement</li>
+            <li class="b-todo-list__item x">Вернути заглушку з функції (mock)</li>
+            <li class="b-todo-list__item x">В контролері викликати фукнцію та передати в темплейт її результат</li>
+            <li class="b-todo-list__item x">Вивести результат на сторінку</li>
+            <li class="b-todo-list__item x">Додати бібліотеку axios npm i axios</li>
+            <li class="b-todo-list__item x">Створити папку для зберігання ключів services/credentials/novaposhta.json</li>
+            <li class="b-todo-list__item x">Додати ключ і URL адресу з Нової Пошти в файл services/credentials/novaposhta.json</li>
+            <li class="b-todo-list__item x">Зробити запит на нову пошту axios.post з параметром заглушкою</li>
+            <li class="b-todo-list__item r">Подебажити респонс</li>
+            <li class="b-todo-list__item x">Прокинути реальні дані</li>
+            <li class="b-todo-list__item x">Витянути параметр пошуку, якщо користувач сабмітить форму</li>
+            <li class="b-todo-list__item x">Передати параметр як параметр пошуку для Нової Пошти</li>
+            <li class="b-todo-list__item x">Вивести кількість відділень в місті (99)</li>
+            <li class="b-todo-list__item x">Додати модель Settlement: models/settlement.js</li>
+            <li class="b-todo-list__item x">Підключити модель в сервіс</li>
+            <li class="b-todo-list__item x">Змапити всі необхідні поля</li>
+            <li class="b-todo-list__item x">Зробити відповідні змінни в темплейті</li>
+            <hr>
+            <li class="b-todo-list__item">Додати searchWarehouses service/novaposhta, яка буде приймати ID населеного пункту та повертати відділеня в цьому населеному пункті Address:getWarehouses</li>
+            <li class="b-todo-list__item">Зробити знайдені міста клікабельними</li>
+            <li class="b-todo-list__item">Коли користувач клікає на місто має відбуватися AJAX запит на новий ендпоінт який поверне список віддлень для вибраного міста</li>
+            <li class="b-todo-list__item">Вивести список віддлень у форматі {адрес} {тип} {статус}</li>
+            <li class="b-todo-list__item">Тип має бути читаємий, наприклад, "Поштове відділення" (getWarehouseTypes)</li>
+            <li class="b-todo-list__item">Статус має бути Open/Closed залежно від робочих годин відділення</li>
+            <li class="b-todo-list__item">По кліку на відділення показувати/ховати додаткову інформацію: розклад роботи, телефон, чи доступний термінал, тощо</li>
+            <li class="b-todo-list__item">Додати Фільтр у вигляді чекбоксів з типом відділень, для того щоб фільтрувати відділеня по типу</li>
+        </ul>
+    </div>
+    
+    <h1>
+        Нова Пошта
+    </h1>
+    
+    <section>
+        <form action="/novaposhta/show" method="GET">
+            <input type="search" name="q" id="q" class="b-form__input" value="<%= q %>">
+            <button type="submit" class="btn">Шукати</button>
+        </form>
+    </section>
+    <section>
+        <h2>Результат пошуку</h2>
+        <ul>
+            <% for (var i=0; i < settlements.length; i++) { %>
+                <li>
+                    <%=settlements[i].name %> (<%= settlements[i].warehouseCount %>)
+                </li>
+            <% } %>
+        </ul>
+    </section>
+    
+    <% if (locals.warehouses && warehouses.length > 0) { %>
+        <!-- TODO: Show NP warehouses -->
+        <section>
+            <h2>Список відділень</h2>
+            <ul>
+                <% for (var i=0; i < warehouses.length; i++) { %>
+                    <li>
+                        <%=warehouses[i].name %>
+                    </li>
+                <% } %>
+            </ul>
+        </section>
+    <% } %>
+</main>
