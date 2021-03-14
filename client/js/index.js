@@ -15,7 +15,7 @@ async function showProducts(url) {
 }
 
 async function showQuickView(url) {
-    const response = await window.fetch(url, {
+    const response = await window.fetch(`${window.location.origin}/${url}`, {
         method: 'GET'
     });
 
@@ -26,7 +26,7 @@ async function showQuickView(url) {
 
         const text = await response.text();
         body.innerHTML = text;
-        modal.classList.remove('d-none');
+        modal.classList.add('b-page__modal--open');
     }
 }
 
@@ -58,7 +58,7 @@ function initEvents() {
         }
 
         if (event.target.classList.contains('js-close-modal')) {
-            event.target.closest('.js-modal').classList.add('d-none');
+            event.target.closest('.js-modal').classList.remove('b-page__modal--open');
         }
     });
 }
