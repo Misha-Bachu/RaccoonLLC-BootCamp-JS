@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/general.css" />
         <link rel="stylesheet" href="css/container.css" />
         <link rel="stylesheet" href="css/main.css" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body class="l-page">
         <!-- header -->
@@ -25,7 +26,7 @@
                     <nav class="b-header__navigation">
                         <ul class="b-navigation">
                             <li class="b-navigation__item">
-                                <a href="#" class="b-navigation__link">Library</a>
+                                <a href="/search/library" class="b-navigation__link">Library</a>
                             </li>
                             <li class="b-navigation__item">
                                 <a href="#" class="b-navigation__link">Store Locator</a>
@@ -41,14 +42,16 @@
                             </form>
                             <div class="b-header__icons m-right">
                                 <span class="fa fa-search js-search-mobile"></span>
-                                <a href="#" class="b-minicart__link">
+                                <a href="cart/minicart" class="b-minicart__link js-minicart-icon">
                                     <i class="fa fa-shopping-cart"></i>
                                 </a>
+                                <strong class="b-minicart__quantity js-minicart-quantity"></strong>
                             </div>
-                            <div class="b-minicart">
-                                <a href="#" class="b-minicart__link">
+                            <div class="b-minicart js-minicart">
+                                <a href="cart/minicart" class="b-minicart__link js-minicart-icon">
                                     <i class="fa fa-shopping-cart"></i>
                                 </a>
+                                <strong class="b-minicart__quantity js-minicart-quantity"></strong>
                             </div>
                         </div>
                     </nav>
