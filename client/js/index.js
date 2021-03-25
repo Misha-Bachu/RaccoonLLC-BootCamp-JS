@@ -1,4 +1,4 @@
-const allProducts = require('./product/products');
+const ALL_PRODUCTS = require('./product/products');
 const search = require('./search/search');
 const productTile = require('./product/productTile');
 const htmlUtils = require('./utils/htmlUtils');
@@ -6,7 +6,7 @@ const sortingUtils = require('./utils/sorting');
 
 const productGrid = document.getElementsByClassName('js-product-grid')[0];
 let selectedSorting = document.querySelector('.js-sorting').value;
-let products = allProducts;
+let products = ALL_PRODUCTS;
 
 function getSortedProducts(sortingId, arrayOfProducts) {
     switch (sortingId) {
@@ -50,7 +50,7 @@ function initEvents() {
         }
 
         search.showSearchTitle(value);
-        products = search.search(value, products);
+        products = search.search(value, ALL_PRODUCTS);
         showProducts();
     });
 
@@ -60,7 +60,7 @@ function initEvents() {
 
         search.hideSearchTitle();
         searchInput.value = '';
-        products = allProducts;
+        products = ALL_PRODUCTS;
 
         showProducts();
     });
