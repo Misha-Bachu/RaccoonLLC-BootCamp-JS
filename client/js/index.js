@@ -8,16 +8,6 @@ const productGrid = document.getElementsByClassName('js-product-grid')[0];
 let selectedSorting = document.querySelector('.js-sorting').value;
 let products = allProducts;
 
-function showProducts(parentNode, arrayOfProducts) {
-    htmlUtils.clearNode(parentNode);
-
-    for (let i = 0; i < arrayOfProducts.length; i += 1) {
-        const element = arrayOfProducts[i];
-        const tile = productTile.render(element);
-        parentNode.appendChild(tile);
-    }
-}
-
 function getSortedProducts(sortingId, arrayOfProducts) {
     switch (sortingId) {
         case 'author':
@@ -31,50 +21,53 @@ function getSortedProducts(sortingId, arrayOfProducts) {
     }
 }
 
+function showProducts() {
+    const sortedProducts = getSortedProducts(selectedSorting, products);
+
+    htmlUtils.clearNode(productGrid);
+
+    for (let i = 0; i < sortedProducts.length; i += 1) {
+        const element = sortedProducts[i];
+        const tile = productTile.render(element);
+        productGrid.appendChild(tile);
+    }
+}
+
 function initEvents() {
     const sortingSelector = document.querySelector('.js-sorting');
     sortingSelector.addEventListener('change', (event) => {
         selectedSorting = event.currentTarget.value;
-        const sortedProducts = getSortedProducts(selectedSorting, products);
-        htmlUtils.clearNode(productGrid);
-        showProducts(productGrid, sortedProducts);
+        showProducts();
     });
 
     const searchForm = document.querySelector('.js-search');
     searchForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const { value } = event.currentTarget.querySelector('input');
-        const searchTitle = document.querySelector('.js-search-title');
 
         if (!value) {
             return;
         }
 
-        searchTitle.classList.remove('d-none');
+        search.showSearchTitle(value);
         products = search.search(value, products);
-        const sortedProducts = getSortedProducts(selectedSorting, products);
-        showProducts(productGrid, sortedProducts);
+        showProducts();
     });
 
     const clearSearchButton = document.querySelector('.js-clear-search');
     clearSearchButton.addEventListener('click', () => {
-        const searchTitle = document.querySelector('.js-search-title');
         const searchInput = document.querySelector('.js-search input');
 
-        searchTitle.classList.add('d-none');
+        search.hideSearchTitle();
         searchInput.value = '';
         products = allProducts;
 
-        const sortedProducts = getSortedProducts(selectedSorting, products);
-        showProducts(productGrid, sortedProducts);
+        showProducts();
     });
 }
 
 function app() {
-    const sortedProducts = getSortedProducts(selectedSorting, products);
-
-    showProducts(productGrid, sortedProducts);
-
+    showProducts();
     initEvents();
 }
 

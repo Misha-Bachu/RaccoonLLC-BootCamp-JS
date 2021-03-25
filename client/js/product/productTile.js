@@ -21,7 +21,7 @@ function render(pdict) {
         </div>
     </div>`;
 
-    return htmlUtils.createElementFromHTML(htmlString);
+    return htmlUtils.createHTMLElementFromString(htmlString);
 }
 
 module.exports = {
