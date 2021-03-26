@@ -372,3 +372,20 @@
 .b-page__close-icon {
     cursor: pointer;
 }
+
+.b-page__pagination {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+}
+
+.b-page__pagination_element {
+    padding: 8px;
+    margin: 0 2px;
+    border: black solid 1px;
+    cursor: pointer;
+}
+
+.b-page__pagination_element.active {
+    background: rebeccapurple;
+}
