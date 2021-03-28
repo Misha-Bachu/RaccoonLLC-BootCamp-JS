@@ -14,20 +14,20 @@ async function showProducts(url) {
     }
 }
 
-async function showQuickView(url) {
-    const response = await window.fetch(`${window.location.origin}/${url}`, {
+function showQuickView(url) {
+    window.fetch(`${window.location.origin}/${url}`, {
         method: 'GET'
+    }).then((resp) => {
+        if (resp.status === 200) {
+            const modal = document.querySelector('.js-modal');
+            const body = modal.querySelector('.js-modal-body');
+            htmlUtils.clearNode(body);
+            resp.text().then((text) => {
+                body.innerHTML = text;
+                modal.classList.add('b-page__modal--open');
+            });
+        }
     });
-
-    if (response.status === 200) {
-        const modal = document.querySelector('.js-modal');
-        const body = modal.querySelector('.js-modal-body');
-        htmlUtils.clearNode(body);
-
-        const text = await response.text();
-        body.innerHTML = text;
-        modal.classList.add('b-page__modal--open');
-    }
 }
 
 function initEvents() {

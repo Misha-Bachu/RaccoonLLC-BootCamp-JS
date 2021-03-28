@@ -34,4 +34,12 @@ router.get('/ajax', (req, res) => {
     });
 });
 
+router.get('/library', (req, res) => {
+    const products = productHelper.getProducts();
+
+    res.render('search/library', {
+        products
+    });
+});
+
 module.exports = router;
