@@ -1,4 +1,4 @@
-const ALL_PRODUCTS = require('./product/products');
+const ALL_PRODUCTS = require('../../config/products');
 const search = require('./search/search');
 const productTile = require('./product/productTile');
 const htmlUtils = require('./utils/htmlUtils');
