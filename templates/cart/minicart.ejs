@@ -1,11 +1,22 @@
-<div>
+<div class="b-minicart__body">
     <% for (let i = 0; i < products.length; i++) { %>
         <% var product = products[i] %>
-        <div>
-            <%= product.name %>
-        </div>
-        <div>
-            <%= product.quantity %>
+        <div class="b-minicart__item">
+            <div>
+                <div class="b-minicart__item__image">
+                    <img src="<%= product.image %>" alt="">
+                </div>
+            </div>
+            <div class="b-minicart__item__info">
+                <div>
+                    <span>Name:</span>
+                    <span><%= product.name %></span>
+                </div>
+                <div>
+                    <span>Quantity:</span>
+                    <span><%= product.quantity %></span>
+                </div>
+            </div>
         </div>
     <% } %>
 </div>

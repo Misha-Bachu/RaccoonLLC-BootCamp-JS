@@ -446,3 +446,32 @@
 .b-minicart__quantity:empty {
     display: none;
 }
+
+.b-minicart__body {
+    position: absolute;
+    width: 400px;
+    right: 0;
+    background: black;
+    color: white;
+    margin: 20px;
+    padding: 20px;
+    height: 500px;
+    overflow: auto;
+}
+
+.b-minicart__item {
+    display: flex;
+}
+
+.b-minicart__item__image {
+    width: 100px;
+}
+
+.b-minicart__item__image img {
+    width: 100%;
+}
+
+.b-minicart__item__info {
+    flex-direction: row;
+    padding: 0 0 0 20px;
+}
