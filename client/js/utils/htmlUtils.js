@@ -1,4 +1,4 @@
-function createElementFromHTML(htmlString) {
+function createHTMLElementFromString(htmlString) {
     const div = document.createElement('div');
     div.innerHTML = htmlString.trim();
 
@@ -11,6 +11,6 @@ function clearNode(node) {
 }
 
 module.exports = {
-    createElementFromHTML,
+    createHTMLElementFromString,
     clearNode
 };
