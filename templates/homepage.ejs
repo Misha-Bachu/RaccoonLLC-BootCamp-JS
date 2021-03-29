@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Bootcamp</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/general.css" />
+        <link rel="stylesheet" href="css/container.css" />
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+    <body class="l-page">
+        <!-- header -->
+        <header class="b-header">
+            <div class="l-container">
+                <div class="b-header__inner">
+                    <div class="b-header__icons m-left">
+                        <span class="fa fa-bars js-hamburger"></span>
+                    </div>
+
+                    <a href="#" class="b-logo">
+                        <img src="static/images/logo.png" class="b-logo__image" />
+                    </a>
+                    <nav class="b-header__navigation">
+                        <ul class="b-navigation">
+                            <li class="b-navigation__item">
+                                <a href="#" class="b-navigation__link">Library</a>
+                            </li>
+                            <li class="b-navigation__item">
+                                <a href="#" class="b-navigation__link">Store Locator</a>
+                            </li>
+                            <li class="b-navigation__item">
+                                <a href="https://raccoon.pet/" target="_blank" class="b-navigation__link">Raccoon LLC</a>
+                            </li>
+                        </ul>
+                        <div class="b-search">
+                            <form class="b-search__form js-search" action="">
+                                <input class="b-form__input" type="text" placeholder="Search" name="search" />
+                                <button class="btn-search" type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                            <div class="b-header__icons m-right">
+                                <span class="fa fa-search js-search-mobile"></span>
+                                <a href="#" class="b-minicart__link">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </a>
+                            </div>
+                            <div class="b-minicart">
+                                <a href="#" class="b-minicart__link">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main info block -->
+        <div class="b-page__wrapper">
+            <div class="l-container">
+                <div class="b-page__inner">
+                    <aside class="b-refinement__wrapper">
+                        <select class="b-form__select product__sorting js-sorting">
+                            <option value="author">Author</option>
+                            <option value="price-high-to-low" selected>Price high to low</option>
+                            <option value="price-low-to-high">Price low to high</option>
+                        </select>
+                        <div class="b-refinement">
+                            <div class="b-refinement__item">
+                                <h2 class="b-refinement__title">Range</h2>
+                                <ul class="b-refinement__values">
+                                    <li class="b-refinement__attribute">
+                                        <a href="#" class="b-refinement__link js-refine-link">
+                                            <input class="b-form__checkbox" type="checkbox" id="refinement1" name="refinement1" value="Refinement label 1">
+                                            <label class="b-form__label" for="refinement1">For Children</label>
+                                        </a>
+                                    </li>
+                                    <li class="b-refinement__attribute">
+                                        <a href="#" class="b-refinement__link js-refine-link">
+                                            <input class="b-form__checkbox" type="checkbox" id="refinement2" name="refinement2" value="Refinement label 2">
+                                            <label class="b-form__label" for="refinement2">For Beginners</label>
+                                        </a>
+                                    </li>
+                                    <li class="b-refinement__attribute">
+                                        <a href="#" class="b-refinement__link js-refine-link">
+                                            <input class="b-form__checkbox" type="checkbox" id="refinement3" name="refinement3" value="Refinement label 3">
+                                            <label class="b-form__label" for="refinement3">For Advanced</label>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </aside>
+                    <main class="b-products__wrapper">
+                        <h1 class="b-page__title">
+                            Best Sellers
+                        </h1>
+                        <div class="b-page__title js-search-title d-none">
+                            Search for
+                            <span class="js-search-word"></span>
+                            <span  class="b-page__close-icon js-clear-search">
+                                <i class="fa fa-times-circle"></i>
+                            </span >
+                        </div>
+                        <div class="b-products___list js-product-grid">
+                            <%- include product/productTiles %>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer class="b-footer">
+            <div class="l-container">
+                &copy; Great opportunity to join eCommerce world with <b>RACCOON LLC</b>
+            </div>
+        </footer>
+    </body>
+
+    <!-- <script src="static/js/index.js"></script> -->
+</html>
