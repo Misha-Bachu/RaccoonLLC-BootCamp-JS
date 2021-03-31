@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Bootcamp</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/general.css" />
+        <link rel="stylesheet" href="css/container.css" />
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+    <body class="l-page">
+        <!-- header -->
+        <header class="b-header">
+            <div class="l-container">
+                <div class="b-header__inner">
+                    <div class="b-header__icons m-left">
+                        <span class="fa fa-bars js-hamburger"></span>
+                    </div>
+
+                    <a href="/" class="b-logo">
+                        <img src="static/images/logo.png" class="b-logo__image" />
+                    </a>
+                    <nav class="b-header__navigation">
+                        <ul class="b-navigation">
+                            <li class="b-navigation__item">
+                                <a href="/search/library" class="b-navigation__link">Library</a>
+                            </li>
+                            <li class="b-navigation__item">
+                                <a href="#" class="b-navigation__link">Store Locator</a>
+                            </li>
+                            <li class="b-navigation__item">
+                                <a href="https://raccoon.pet/" target="_blank" class="b-navigation__link">Raccoon LLC</a>
+                            </li>
+                        </ul>
+                        <div class="b-search">
+                            <form class="b-search__form js-search" action="/search/show">
+                                <input class="b-form__input" type="text" placeholder="Search" name="search" />
+                                <button class="btn-search" type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                            <div class="b-header__icons m-right">
+                                <span class="fa fa-search js-search-mobile"></span>
+                                <a href="#" class="b-minicart__link">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </a>
+                            </div>
+                            <div class="b-minicart">
+                                <a href="#" class="b-minicart__link">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <%-body -%>
+
+        <!-- footer -->
+        <footer class="b-footer">
+            <div class="l-container">
+                &copy; Great opportunity to join eCommerce world with <b>RACCOON LLC</b>
+            </div>
+        </footer>
+        <script src="static/js/index.js"></script>
+    </body>
+
+</html>

@@ -17,21 +17,7 @@ function search(queryString, arrayForSearch) {
     });
 }
 
-function showSearchTitle(query) {
-    const searchTitle = document.querySelector('.js-search-title');
-    const searchWord = document.querySelector('.js-search-word');
-
-    searchTitle.classList.remove('d-none');
-    searchWord.textContent = query;
-}
-
-function hideSearchTitle() {
-    const searchTitle = document.querySelector('.js-search-title');
-    searchTitle.classList.add('d-none');
-}
-
 module.exports = {
     search,
-    showSearchTitle,
-    hideSearchTitle
+    fieldsForSearch
 };
