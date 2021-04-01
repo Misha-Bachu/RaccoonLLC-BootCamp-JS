@@ -5,6 +5,9 @@ const controllers = {
     home: {
         path: './controllers/home',
         prefix: '/'
+    },
+    product: {
+        path: './controllers/product'
     }
 };
 

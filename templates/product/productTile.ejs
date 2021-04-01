@@ -1,10 +1,9 @@
 
-<div class="b-product-tile js-product-tile js-product"
-data-pid="<%= product.id %>">
+<div class="b-product-tile js-product-tile js-product" data-pid="<%= product.id %>">
 <div class="b-product-tile__image__wrapper">
     <img class="b-product-tile__image" src="<%= product.image %>">
     <div class="b-product-tile__preview js-quick-view"
-        data-url="<%= 'product/quick-view?pid=' + product.id %>">
+        data-url="<%= '/product/quick-view?pid=' + product.id %>">
         <i class="b-product-tile__icon fa fa-search-plus fa-2x"></i>
         <div>Preview book</div>
     </div>
