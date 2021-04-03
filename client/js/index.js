@@ -1,73 +1,71 @@
-const ALL_PRODUCTS = require('../../config/products');
-const search = require('./search/search');
-const productTile = require('./product/productTile');
 const htmlUtils = require('./utils/htmlUtils');
-const sortingUtils = require('./utils/sorting');
 
 const productGrid = document.getElementsByClassName('js-product-grid')[0];
-let selectedSorting = document.querySelector('.js-sorting').value;
-let products = ALL_PRODUCTS;
 
-function getSortedProducts(sortingId, arrayOfProducts) {
-    switch (sortingId) {
-        case 'author':
-            return sortingUtils.sortProductsByAuthor(arrayOfProducts);
-        case 'price-high-to-low':
-            return sortingUtils.sortProductsByPriceHighToLow(arrayOfProducts);
-        case 'price-low-to-high':
-            return sortingUtils.sortProductsByPriceLowToHigh(arrayOfProducts);
-        default:
-            return [];
+async function showProducts(url) {
+    const response = await window.fetch(url, {
+        method: 'GET'
+    });
+
+    if (response.status === 200) {
+        htmlUtils.clearNode(productGrid);
+        const text = await response.text();
+        productGrid.innerHTML = text;
     }
 }
 
-function showProducts() {
-    const sortedProducts = getSortedProducts(selectedSorting, products);
+function showQuickView(url) {
+    window.fetch(`${window.location.origin}${url}`, {
+        method: 'GET'
+    }).then((response) => {
+        if (response.status === 200) {
+            const modal = document.querySelector('.js-modal');
+            const body = modal.querySelector('.js-modal-body');
+            htmlUtils.clearNode(body);
 
-    htmlUtils.clearNode(productGrid);
-
-    for (let i = 0; i < sortedProducts.length; i += 1) {
-        const element = sortedProducts[i];
-        const tile = productTile.render(element);
-        productGrid.appendChild(tile);
-    }
+            response.text().then((text) => {
+                body.innerHTML = text;
+                modal.classList.add('b-page__modal--open');
+            });
+        }
+    });
 }
 
 function initEvents() {
     const sortingSelector = document.querySelector('.js-sorting');
-    sortingSelector.addEventListener('change', (event) => {
-        selectedSorting = event.currentTarget.value;
-        showProducts();
-    });
+    if (sortingSelector) {
+        sortingSelector.addEventListener('change', (event) => {
+            const url = event.currentTarget.options[event.currentTarget.selectedIndex].attributes['data-url'].value;
+            showProducts(url);
+        });
+    }
 
     const searchForm = document.querySelector('.js-search');
     searchForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const { value } = event.currentTarget.querySelector('input');
-
-        if (!value) {
-            return;
+        if (value && value !== '') {
+            const url = `${searchForm.action}?q=${value}`;
+            window.location = url;
         }
-
-        search.showSearchTitle(value);
-        products = search.search(value, ALL_PRODUCTS);
-        showProducts();
     });
 
-    const clearSearchButton = document.querySelector('.js-clear-search');
-    clearSearchButton.addEventListener('click', () => {
-        const searchInput = document.querySelector('.js-search input');
+    document.addEventListener('click', (event) => {
+        if (event.target.classList.contains('js-quick-view')) {
+            event.preventDefault();
+            const url = event.target.attributes['data-url'].value;
 
-        search.hideSearchTitle();
-        searchInput.value = '';
-        products = ALL_PRODUCTS;
+            showQuickView(url);
+        }
 
-        showProducts();
+        if (event.target.classList.contains('js-close-modal')) {
+            event.preventDefault();
+            event.target.closest('.js-modal').classList.remove('b-page__modal--open');
+        }
     });
 }
 
 function app() {
-    showProducts();
     initEvents();
 }
 
