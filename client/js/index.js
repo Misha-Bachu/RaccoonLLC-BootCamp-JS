@@ -1,4 +1,5 @@
 const htmlUtils = require('./utils/htmlUtils');
+const basketComponent = require('./cart/basketComponent');
 
 const productGrid = document.getElementsByClassName('js-product-grid')[0];
 
@@ -67,6 +68,7 @@ function initEvents() {
 
 function app() {
     initEvents();
+    basketComponent.init();
 }
 
 app();
