@@ -1,9 +1,10 @@
 const fieldsForSearch = ['name', 'author', 'description'];
 
 function search(queryString, arrayForSearch) {
-    if (!Array.isArray(arrayForSearch)) {
+    if (!queryString || !Array.isArray(arrayForSearch)) {
         return [];
     }
+
     const q = queryString.toLowerCase();
     return arrayForSearch.filter((item) => {
         for (let i = 0; i < fieldsForSearch.length; i += 1) {

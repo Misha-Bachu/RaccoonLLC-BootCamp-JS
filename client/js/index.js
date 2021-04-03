@@ -36,7 +36,6 @@ function initEvents() {
     if (sortingSelector) {
         sortingSelector.addEventListener('change', (event) => {
             const url = event.currentTarget.options[event.currentTarget.selectedIndex].attributes['data-url'].value;
-
             showProducts(url);
         });
     }
@@ -45,13 +44,10 @@ function initEvents() {
     searchForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const { value } = event.currentTarget.querySelector('input');
-
-        if (!value) {
-            return;
+        if (value && value !== '') {
+            const url = `${searchForm.action}?q=${value}`;
+            window.location = url;
         }
-
-        const url = `${searchForm.action}?q=${value}`;
-        window.location = url;
     });
 
     document.addEventListener('click', (event) => {

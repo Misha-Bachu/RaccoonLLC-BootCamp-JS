@@ -33,18 +33,19 @@
                 </div>
             </aside>
             <main class="b-products__wrapper">
-                <h1 class="b-page__title">
-                    Best Sellers
-                </h1>
-                <div class="b-page__title js-search-title d-none">
+                <div class="b-page__title js-search-title">
                     Search for
-                    <span class="js-search-word"></span>
-                    <span  class="b-page__close-icon js-clear-search">
-                        <i class="fa fa-times-circle"></i>
-                    </span >
+                    <span class="js-search-word">
+                        <%= queryString %>
+                    </span>
                 </div>
                 <div class="b-products___list js-product-grid">
+
                     <%- include ../product/productTiles %>
+
+                </div>
+                <div class="js-no-search-results <%= products.length === 0 ? '' : 'd-none' %>">
+                        Products for this search not found. Please try another search.
                 </div>
             </main>
         </div>
