@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "scripts": {
         "server-watch": "nodemon app.js",
-        "start": "node app.js",
+        "start": "webpack --config webpack.config.js && node app.js",
         "build": "webpack --config webpack.config.js",
         "watch": "webpack --watch",
         "lint": "eslint ./**/*.js"

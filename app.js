@@ -6,7 +6,7 @@ const ejsLocals = require('ejs-locals');
 const controllers = require('./controllersRegistry.js');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const templates = path.resolve(__dirname, 'templates');
 const expressStatic = express.static('static');
 const expressCSS = express.static('css');
