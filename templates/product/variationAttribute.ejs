@@ -1,0 +1,6 @@
+
+<% for (let i = 0; i < variationAttribute.options.length; i++) { %>
+    <% var option = variationAttribute.options[i] %>
+
+    <span class="b-variation__item <%= option.selected ? 'm-active' : '' %>"><%= option.name %></span>
+<% } %>

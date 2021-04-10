@@ -1,12 +1,12 @@
 const Router = require('express');
-const productHelpers = require('../scripts/helpers/productHelpers');
-const preferences = require('../config/preferences');
 
 const router = Router();
 
+const preferences = require('../config/preferences');
+const productHelpers = require('../scripts/helpers/productHelpers');
+
 router.get('^/$|/home', (req, res) => {
-    let products = productHelpers.getProducts();
-    products = products.slice(0, preferences.homepageProductQuantity);
+    const products = productHelpers.getProducts(preferences.homepageProductQuantity);
 
     res.render('homepage', {
         products

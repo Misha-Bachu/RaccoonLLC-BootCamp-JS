@@ -16,6 +16,7 @@
     "rules": {
         "indent": ["error", 4, { "SwitchCase": 1 }],
         "comma-dangle": ["error", "never"],
-        "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"]
+        "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
+        "global-require": 0
     }
 }
