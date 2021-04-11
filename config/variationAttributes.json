@@ -1,0 +1,18 @@
+[
+    {
+        "id": "BookType",
+        "name": "Type",
+        "masterID": "001",
+        "options": [
+            {
+                "id": "paperBook",
+                "name": "Paper"
+            },
+
+            {
+                "id": "electronicBook",
+                "name": "Electronic"
+            }
+        ]
+    }
+]

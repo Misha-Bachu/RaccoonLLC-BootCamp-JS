@@ -1,16 +1,18 @@
 const Router = require('express');
 
+const router = Router();
+
 const searchValidation = require('../middleware/searchValidation');
-const productHelpers = require('../scripts/helpers/productHelpers');
+
 const searchHelpers = require('../scripts/helpers/searchHelpers');
 const sortingHelpers = require('../scripts/helpers/sortingHelpers');
-
-const router = Router();
+const productHelpers = require('../scripts/helpers/productHelpers');
 
 router.get('/show',
     searchValidation.emptyField,
     (req, res) => {
         const { q } = req.query;
+
         const allProducts = productHelpers.getProducts();
         let sortingOptions = sortingHelpers.getSortingOptions();
 
@@ -27,6 +29,7 @@ router.get('/show',
 
 router.get('/ajax', (req, res) => {
     const { q, sortId } = req.query;
+
     const products = productHelpers.getProducts();
     let searchResults = searchHelpers.search(q, products);
     searchResults = sortingHelpers.getSortedProducts(sortId, searchResults);
