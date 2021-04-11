@@ -10,6 +10,7 @@
     },
     "react-scripts": "^4.0.2",
     "dependencies": {
+        "axios": "^0.21.1",
         "ejs-locals": "^1.0.2",
         "express": "^4.17.1"
     },
