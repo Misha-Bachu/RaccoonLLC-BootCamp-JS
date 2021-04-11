@@ -18,13 +18,41 @@
                             value="<%= q %>"
                         />
                     </label>
-                    <button type="submit">Search</button>
-                </form>
+                    <button type="submit">Шукати</button>
+                    <% if (cities.length > 0) { %>
+                        <hr>
+                        <h1>Виберіть місто:</h1>
 
-                <div class="search-result">
-                    <% for (let i = 0; i < cities.length; i++) { %>
-                        <div class="search-item">
-                            <%= cities[i].Present %>
+                        <div class="search-result">
+                            <% for (let i = 0; i < cities.length; i++) { %>
+
+                                <div>
+                                    <input
+                                        type="radio"
+                                        id="<%= cities[i].DeliveryCity %>"
+                                        name="city"
+                                        value="<%= cities[i].DeliveryCity %>"
+                                        <%= cities[i].DeliveryCity == city ? "checked='checked'" : "" %>
+                                    >
+                                    <label for="<%= cities[i].DeliveryCity %>">
+                                        <%= cities[i].Present %> ( <%= cities[i].Warehouses %> )
+                                    </label>
+                                </div>
+                            <% } %>
+                        </div>
+                        <button type="submit">Показати відділення</button>
+                    <% } %>
+
+                </form>
+                <% if (cities.length > 0) { %>
+                    <hr>
+                    <h1>Список відділень:</h1>
+                <% } %>
+                <div class="b-warehouses">
+                    <% for (let i = 0; i < warehouses.length; i++) { %>
+
+                        <div>
+                            <%= warehouses[i].Description %>
                         </div>
                     <% } %>
                 </div>

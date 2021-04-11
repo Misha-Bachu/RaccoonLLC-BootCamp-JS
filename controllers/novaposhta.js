@@ -4,10 +4,17 @@ const router = Router();
 const npService = require('../scripts/services/novaposhta');
 
 router.get('/show', async (req, res) => {
-    const { q } = req.query;
-    const cities = await npService.searchCity(req.query.q);
+    const { q, city } = req.query;
 
-    res.render('novaposhta/search', { cities, q });
+    const cities = q ? await npService.searchCity(req.query.q) : [];
+    const warehouses = city ? await npService.searchWarehouse(city) : [];
+
+    res.render('novaposhta/search', {
+        cities,
+        warehouses,
+        q,
+        city
+    });
 });
 
 module.exports = router;

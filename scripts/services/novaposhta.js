@@ -18,6 +18,23 @@ async function searchCity(query) {
     return cities;
 }
 
+async function searchWarehouse(cityID) {
+    const result = await axios.post(url, {
+        apiKey: key,
+        modelName: 'AddressGeneral',
+        calledMethod: 'getWarehouses',
+        methodProperties: {
+            CityRef: cityID,
+            Limit: 50
+        }
+    });
+
+    const warehouses = result.data.data;
+
+    return warehouses;
+}
+
 module.exports = {
-    searchCity
+    searchCity,
+    searchWarehouse
 };
