@@ -1,0 +1,33 @@
+<% layout('../layout/page') -%>
+
+<!-- Main info block -->
+<div class="b-page__wrapper">
+    <div class="l-container">
+        <div class="b-page__inner">
+            <main class="b-products__wrapper">
+                <h1>Nova Poshta</h1>
+                <form
+                    action="/novaposhta/show"
+                    method="get"
+                >
+                    <input
+                        type="search"
+                        placeholder="Введіть місто"
+                        name="q"
+                        id="query"
+                        value="<%= q %>"
+                    >
+                    <button type="submit">Пошук</button>
+                </form>
+
+                <div>
+                    <% for (let i = 0; i < cities.length; i++) { %>
+                        <div>
+                            <%= cities[i].Present %>
+                        </div>
+                    <% } %>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>

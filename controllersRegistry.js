@@ -8,6 +8,9 @@ const controllers = {
     },
     product: {
         path: './controllers/product'
+    },
+    novaposhta: {
+        path: './controllers/novaposhta'
     }
 };
 
