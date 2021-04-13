@@ -12,7 +12,7 @@ router.get('/show', async (req, res) => {
     res.render('novaposhta/search', {
         cities,
         warehouses,
-        q,
+        q: q || '',
         city
     });
 });

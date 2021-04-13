@@ -25,7 +25,7 @@ async function searchWarehouse(cityID) {
         calledMethod: 'getWarehouses',
         methodProperties: {
             CityRef: cityID,
-            Limit: 50
+            Limit: 5
         }
     });
 
