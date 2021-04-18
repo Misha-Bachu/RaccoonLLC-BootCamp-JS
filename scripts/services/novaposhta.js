@@ -1,19 +1,40 @@
 const axios = require('axios');
 
-async function searchCities(q) {
-    const result = await axios.post('https://api.novaposhta.ua/v2.0/json/', {
-        apiKey: '902b23be1ab4c1bbdc74ada7c82a52c3',
+const { url, key } = require('../../config/credentials').novaposhta;
+
+async function searchCity(query) {
+    const result = await axios.post(url, {
+        apiKey: key,
         modelName: 'Address',
         calledMethod: 'searchSettlements',
         methodProperties: {
-            CityName: q,
-            Limit: 100
+            CityName: query,
+            Limit: 5
         }
     });
-    const addresses = result.data.data[0].Addresses;
-    return addresses;
+
+    const cities = result.data.data[0].Addresses;
+
+    return cities;
+}
+
+async function searchWarehouse(cityID) {
+    const result = await axios.post(url, {
+        apiKey: key,
+        modelName: 'AddressGeneral',
+        calledMethod: 'getWarehouses',
+        methodProperties: {
+            CityRef: cityID,
+            Limit: 10
+        }
+    });
+
+    const warehouses = result.data.data;
+
+    return warehouses;
 }
 
 module.exports = {
-    searchCities
+    searchCity,
+    searchWarehouse
 };

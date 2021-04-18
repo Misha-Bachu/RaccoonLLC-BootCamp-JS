@@ -3,3 +3,4 @@ node_modules/
 static/js/*
 
 package-lock.json
+scripts/services/credentials.json

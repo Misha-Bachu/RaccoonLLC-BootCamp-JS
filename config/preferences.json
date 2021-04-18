@@ -1,4 +1,5 @@
 {
     "paginationPageSize": 4,
-    "homepageProductQuantity": 3
+    "homepageProductQuantity": 3,
+    "recaptchaEnabled": false
 }

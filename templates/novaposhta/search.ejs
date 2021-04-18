@@ -1,0 +1,74 @@
+<% layout('../layout/page') -%>
+
+<!-- Main info block -->
+<div class="b-page__wrapper">
+    <div class="l-container">
+        <div class="b-page__inner">
+            <main class="b-novaposhta__wrapper">
+                <h1>
+                    NOVA POSHTA
+                </h1>
+                <form action="/novaposhta/search" method="GET">
+                    <label for="citySearch">
+                        <input
+                            type="search"
+                            id="citySearch"
+                            placeholder="Enter city"
+                            name="q"
+                            value="<%= q %>"
+                        />
+                    </label>
+                    <% if (recaptchaEnabled) { %>
+                        <div
+                            class="g-recaptcha js-recaptcha"
+                            data-sitekey="<%= reCaptchaKey %>"
+                        ></div>
+                    <% } %>
+                    <button type="submit">Шукати</button>
+                    <% if (cities.length > 0) { %>
+                        <hr>
+                        <h1>Виберіть місто:</h1>
+
+                        <div class="search-result">
+                            <% for (let i = 0; i < cities.length; i++) { %>
+
+                                <div>
+                                    <input
+                                        type="radio"
+                                        id="<%= cities[i].DeliveryCity %>"
+                                        name="city"
+                                        value="<%= cities[i].DeliveryCity %>"
+                                        <%= cities[i].DeliveryCity == city ? "checked='checked'" : "" %>
+                                    >
+                                    <label for="<%= cities[i].DeliveryCity %>">
+                                        <%= cities[i].Present %> ( <%= cities[i].Warehouses %> )
+                                    </label>
+                                </div>
+                            <% } %>
+                        </div>
+                        <button type="submit">Показати відділення</button>
+                    <% } %>
+
+                </form>
+                <% if (cities.length > 0) { %>
+                    <hr>
+                    <h1>Відділення:</h1>
+                    <div class="b-warehouses">
+                        <% for (let i = 0; i < warehouses.length; i++) { %>
+
+                            <div
+                                class="js-warehouse b-warehouse"
+                                data-lat="<%= warehouses[i].Latitude %>"
+                                data-lng="<%= warehouses[i].Longitude %>"
+                                data-title="<%= warehouses[i].Description %>"
+                            >
+                                <%= warehouses[i].Description %>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="b-map js-map" data-key="<%= googleKey %>"></div>
+                <% } %>
+            </main>
+        </div>
+    </div>
+</div>
