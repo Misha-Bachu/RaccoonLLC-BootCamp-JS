@@ -2,6 +2,9 @@
     {
         "path": "^/$|/home",
         "pageName": "homePage",
-        "pageTitle": "Home Page"
+        "canonicalUrl": "https://raccoon.pet/",
+        "title": "Home Page | BootCamp JS  Raccoon LLC",
+        "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonumy eirmod tempor incididunt ut labore et dolore magna aliquyam erat, sed diam",
+        "keywords": "face book,kelley blue book,kelly blue book,gray's anatomy,lovecraft country,chrome book,twilight,the handmaid's tale,mac book,book,dr seuss,firefly lane,bookstore,bookshelf,the maze runner,artemis fowl,percy jackson,the flight attendant,fan fiction,diary of a wimpy kid,ready player one,pride and prejudice,progress book,book store near me,harry potter and the philosopher's stone,american gods,blue book,a discovery of witches,blue book value,the fault in our stars,little house on the prairie,kelley blue book value,kindle unlimited,library genesis,kindle cloud reader,dr seuss books,autobiography,bridge to terabithia,fahrenheit 451,scholastic book club,to kill a mockingbird,talking to strangers,series of unfortunate events,jungle book,the jungle book,animal farm,green book,brave new world,daily reflections,harry potter and the goblet of fire"
     }
 ]

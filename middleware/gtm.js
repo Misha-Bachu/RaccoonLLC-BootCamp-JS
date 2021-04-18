@@ -19,7 +19,7 @@ function commonData(req, res, next) {
     const gtm = {
         ...res.locals.gtm,
         GTMEnabled: preferences.GTMEnabled,
-        GTMContainerID: credentials.GTMContainerID
+        GTMContainerID: credentials.gtm.key,
     };
     const pageInfo = pageHelpers.getPageInfoByPath(req.path);
 

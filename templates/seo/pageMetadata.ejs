@@ -1,0 +1,10 @@
+<% if (typeof metadata !== 'undefined' && metadata)  {%>
+    <title><%= metadata.title %></title>
+    <meta name="description" content="<%= metadata.description %>">
+    <meta name="keywords" content="<%= metadata.keywords %>">
+    <link rel="canonical" href="<%= metadata.canonicalUrl %>" />
+<%} else { %>
+    <title>BootCamp</title>
+    <meta name="description" content="JS BootCamp Raccoon LLC default description">
+    <meta name="keywords" content="JS BootCamp Raccoon LLC default keywords">
+<% } %>
