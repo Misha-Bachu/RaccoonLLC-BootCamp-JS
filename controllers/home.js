@@ -4,13 +4,16 @@ const router = Router();
 
 const preferences = require('../config/preferences');
 const productHelpers = require('../scripts/helpers/productHelpers');
+const gtm = require('../middleware/gtm');
 
-router.get('^/$|/home', (req, res) => {
+router.get('^/$|/home', gtm.commonData, (req, res, next) => {
     const products = productHelpers.getProducts(preferences.homepageProductQuantity);
 
     res.render('homepage', {
-        products
+        products,
+        gtm: res.locals.gtm
     });
+    next();
 });
 
 module.exports = router;

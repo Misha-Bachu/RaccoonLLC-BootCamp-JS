@@ -11,6 +11,7 @@ class ProductSerializer extends BaseSerializer {
         this.description = product.description;
         this.price = product.price;
         this.type = product.type;
+        this.gtmProductInfo = product.gtmProductInfo;
     }
 }
 

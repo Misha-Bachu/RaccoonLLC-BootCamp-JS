@@ -1,0 +1,7 @@
+[
+    {
+        "path": "^/$|/home",
+        "pageName": "homePage",
+        "pageTitle": "Home Page"
+    }
+]

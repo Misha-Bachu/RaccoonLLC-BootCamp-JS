@@ -1,4 +1,5 @@
 const ProductSerializer = require('../../serializers/products/ProductSerializer');
+const gtmHelpers = require('../../scripts/helpers/gtmHelpers');
 
 class Product {
     constructor(productData) {
@@ -9,6 +10,7 @@ class Product {
         this.description = productData.description;
         this.price = productData.price;
         this.type = productData.type;
+        this.gtmProductInfo = gtmHelpers.getProductInfo(productData);
     }
 
     getID() {

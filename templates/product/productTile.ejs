@@ -1,5 +1,7 @@
 
-<div class="b-product-tile js-product-tile js-product" data-pid="<%= product.id %>">
+<div class="b-product-tile js-product-tile js-product"
+    data-pid="<%= product.id %>"
+    data-product-info="<%= JSON.stringify(product.gtmProductInfo || {}) %>">
 <div class="b-product-tile__image__wrapper">
     <img class="b-product-tile__image" src="<%= product.image %>">
     <div class="b-product-tile__preview js-quick-view"
