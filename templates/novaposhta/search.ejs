@@ -8,7 +8,7 @@
                 <h1>
                     NOVA POSHTA
                 </h1>
-                <form action="/novaposhta/show" method="GET">
+                <form action="/novaposhta/search" method="GET">
                     <label for="citySearch">
                         <input
                             type="search"
@@ -18,6 +18,12 @@
                             value="<%= q %>"
                         />
                     </label>
+                    <% if (recaptchaEnabled) { %>
+                        <div
+                            class="g-recaptcha js-recaptcha"
+                            data-sitekey="<%= reCaptchaKey %>"
+                        ></div>
+                    <% } %>
                     <button type="submit">Шукати</button>
                     <% if (cities.length > 0) { %>
                         <hr>
@@ -46,16 +52,22 @@
                 </form>
                 <% if (cities.length > 0) { %>
                     <hr>
-                    <h1>Список відділень:</h1>
-                <% } %>
-                <div class="b-warehouses">
-                    <% for (let i = 0; i < warehouses.length; i++) { %>
+                    <h1>Відділення:</h1>
+                    <div class="b-warehouses">
+                        <% for (let i = 0; i < warehouses.length; i++) { %>
 
-                        <div>
-                            <%= warehouses[i].Description %>
-                        </div>
-                    <% } %>
-                </div>
+                            <div
+                                class="js-warehouse b-warehouse"
+                                data-lat="<%= warehouses[i].Latitude %>"
+                                data-lng="<%= warehouses[i].Longitude %>"
+                                data-title="<%= warehouses[i].Description %>"
+                            >
+                                <%= warehouses[i].Description %>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="b-map js-map" data-key="<%= googleKey %>"></div>
+                <% } %>
             </main>
         </div>
     </div>

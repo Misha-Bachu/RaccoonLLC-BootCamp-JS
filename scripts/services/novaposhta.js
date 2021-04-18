@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const { url, key } = require('./credentials').novaposhta;
+const { url, key } = require('../../config/credentials').novaposhta;
 
 async function searchCity(query) {
     const result = await axios.post(url, {
@@ -25,7 +25,7 @@ async function searchWarehouse(cityID) {
         calledMethod: 'getWarehouses',
         methodProperties: {
             CityRef: cityID,
-            Limit: 5
+            Limit: 10
         }
     });
 

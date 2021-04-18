@@ -1,4 +1,5 @@
 const htmlUtils = require('./utils/htmlUtils');
+const novaposhta = require('./novaposhta');
 
 const productGrid = document.getElementsByClassName('js-product-grid')[0];
 
@@ -67,6 +68,7 @@ function initEvents() {
 
 function app() {
     initEvents();
+    novaposhta.init();
 }
 
 app();
