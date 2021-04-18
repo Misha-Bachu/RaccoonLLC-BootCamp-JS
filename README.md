@@ -39,6 +39,7 @@ For branches use the next format: `[feature/bugfix]/[code]_[branch_name]`
 - `branch_name` - short separated by `_` name of branch in lowercase
 
 **Examples**
+
 - `feature/LSN-001_workspace_setup`
 - `bugfix/LSN-001_fix_lint_errors`
 

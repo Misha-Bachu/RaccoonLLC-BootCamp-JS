@@ -4,3 +4,4 @@ config/credentials.json
 static/js/*
 
 package-lock.json
+config/credentials.json

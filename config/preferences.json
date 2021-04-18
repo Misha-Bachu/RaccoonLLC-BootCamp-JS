@@ -1,5 +1,6 @@
 {
     "paginationPageSize": 4,
     "homepageProductQuantity": 3,
-    "GTMEnabled": true
+    "GTMEnabled": true,
+    "recaptchaEnabled": false
 }

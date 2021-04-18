@@ -516,3 +516,7 @@
 .b-minicart__quantity:empty {
     display: none;
 }
+
+.b-map {
+    height: 400px;
+}
