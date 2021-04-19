@@ -11,9 +11,7 @@ router.get('^/$|/home', gtm.commonData, seo.pageMetadata, (req, res, next) => {
     const products = productHelpers.getProducts(preferences.homepageProductQuantity);
 
     res.render('homepage', {
-        products,
-        gtm: res.locals.gtm,
-        metadata: res.locals.metadata
+        products
     });
     next();
 });
